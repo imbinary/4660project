@@ -80,6 +80,7 @@ class qr_reader:
                             qrdata = symbol.data
                             self.qr_pub.publish(qrdata)
                             print qrdata
+                        cv2.rectangle(cv_image, a, c, (255, 0, 0), 2)
 
         except CvBridgeError, e:
             print e

@@ -10,13 +10,12 @@ from PIL import Image as Image2
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 from std_msgs.msg import String
-from geometry_msgs.msg import Twist
 
 
-class image_converter:
+class qr_reader:
 
     def __init__(self):
-        rospy.init_node('image_converter', anonymous=True)
+        rospy.init_node('qr_reader', anonymous=True)
         self.image_pub = rospy.Publisher("image_topic_2", Image, queue_size=10)
         self.qr_pub = rospy.Publisher('QR', String, queue_size=1)
         self.bridge = CvBridge()
@@ -94,7 +93,7 @@ class image_converter:
 
 
 def main(args):
-    image_converter()
+    qr_reader()
     try:
         rospy.spin()
     except KeyboardInterrupt:

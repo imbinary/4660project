@@ -73,7 +73,7 @@ class qr_reader:
                             else:
                                 self.qr_pub.publish("Adjust Right")
                         elif self.adjusting:
-                            self.qr_pub.publish("Adjust")
+                            self.qr_pub.publish("Adjust Straight")
                             self.adjusting = False
 
                         if w > 130:
